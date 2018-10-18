@@ -1,0 +1,1 @@
+To get identical effect like at the screens, simply add camera image effect -colour correction curves. Nothing more:)
