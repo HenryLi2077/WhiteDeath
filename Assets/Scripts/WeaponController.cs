@@ -18,7 +18,10 @@ public class WeaponController : MonoBehaviour
     //private float reloadDelay = 0.23f;
 
     // Camera
-    public Camera fpsCam;
+    //public Camera spread;
+
+    // Bullet Spread
+    public GameObject[] bulletSpread;
 
     // Damage
     public float damage = 10f;
@@ -113,9 +116,6 @@ public class WeaponController : MonoBehaviour
 
         //Set the animator component
         anim = GetComponent<Animator>();
-
-        //Set the ammo count
-        //RefillAmmo();
 
         //Start with muzzleflashes hidden
         Components.sideMuzzle.GetComponent<SpriteRenderer>().enabled = false;
@@ -238,27 +238,33 @@ public class WeaponController : MonoBehaviour
             anim.SetTrigger("Shoot");
         }
 
+        //Hit Enemy
         RaycastHit hit;
-        if(Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
+
+        foreach (GameObject spread in bulletSpread)
         {
-            Debug.Log(hit.transform.name);
-
-            // Deal Damage
-            EnemyStats target = hit.transform.GetComponent<EnemyStats>();
-            if(target != null)
+            if (Physics.Raycast(spread.transform.position, spread.transform.forward, out hit, range))
             {
-                target.TakeDamage(damage);
-            }
+                Debug.Log(hit.transform.name);
+                Debug.DrawRay(spread.transform.position, spread.transform.forward, Color.green, 5f);
 
-            // Enemy Knockback (Not working!)
-            if(hit.rigidbody != null)
-            {
-                hit.rigidbody.AddForce(fpsCam.transform.forward * impactForce);
-            }
+                // Deal Damage
+                EnemyStats target = hit.transform.GetComponent<EnemyStats>();
+                if (target != null)
+                {
+                    target.TakeDamage(damage);
+                }
 
-            // Hit Effect
-            GameObject impactGO = Instantiate(HitEffect.impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
-            Destroy(impactGO, 2f);
+                // Enemy Knockback (Not working!)
+                if (hit.rigidbody != null)
+                {
+                    hit.rigidbody.AddForce(spread.transform.forward * impactForce);
+                }
+
+                // Hit Effect
+                GameObject impactGO = Instantiate(HitEffect.impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
+                Destroy(impactGO, 2f);
+            }
         }
 
         //Remove 1 bullet

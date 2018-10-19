@@ -4,6 +4,9 @@
 public class PlayerController : MonoBehaviour {
 
     [SerializeField]
+    private GameObject flashlight;
+
+    [SerializeField]
     private float speed = 5f;
 
     public float stamina = 1f;
@@ -74,6 +77,12 @@ public class PlayerController : MonoBehaviour {
         float _cameraRotationX = _xRot * lookSensitivity;
 
         motor.RotateCamera(_cameraRotationX);
+
+        // Flashlight
+        if(Input.GetKeyDown(KeyCode.F))
+        {
+            flashlight.SetActive(!flashlight.activeSelf);
+        }
     }
 
     void OnTriggerEnter(Collider other)
