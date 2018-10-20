@@ -89,13 +89,15 @@ public class PlayerController : MonoBehaviour {
     {
         if(other.gameObject.CompareTag("Health"))
         {
-            other.gameObject.SetActive(false);
+            PickUpEnable.instance.Spawn(other.gameObject.transform.position);
+            Destroy(other.gameObject);
             PlayerStats.instance.PlayerHealed();
         }
 
         if (other.gameObject.CompareTag("Ammo"))
         {
-            other.gameObject.SetActive(false);
+            PickUpEnable.instance.Spawn(other.gameObject.transform.position);
+            Destroy(other.gameObject);
             WeaponController.instance.PickUpAmmo();
         }
     }
