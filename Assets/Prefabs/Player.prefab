@@ -846,15 +846,15 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1410990970776986}
-  m_LocalRotation: {x: -0, y: -0.9952175, z: -0, w: -0.09768389}
-  m_LocalPosition: {x: 73.876, y: 8.693, z: 48.54}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 74.026, y: 8.713, z: 47.954}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4713877506352386}
   - {fileID: 4452772816872134}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -191.21199, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4539432549755666
 Transform:
   m_ObjectHideFlags: 1
@@ -1361,6 +1361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 20819566427598750}
+  deathCam: {fileID: 0}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 2048

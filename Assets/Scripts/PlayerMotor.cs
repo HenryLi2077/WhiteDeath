@@ -6,6 +6,8 @@ public class PlayerMotor : MonoBehaviour {
 
     [SerializeField]
     private Camera cam;
+    [SerializeField]
+    private Camera deathCam;
 
     public LayerMask whatIsGround;
     private Vector3 velocity = Vector3.zero;
@@ -51,6 +53,18 @@ public class PlayerMotor : MonoBehaviour {
     void Update()
     {
         PerformJump();
+
+        // Kill test
+        if(Input.GetKeyDown(KeyCode.K))
+        {
+            TimeManager.instance.DoSlowmotion();
+            deathCam.transform.position = cam.transform.position;
+            deathCam.transform.rotation = cam.transform.rotation;
+            cam.gameObject.SetActive(false);
+            deathCam.gameObject.SetActive(true);
+
+            Destroy(this.gameObject);
+        }
     }
 
     void FixedUpdate()
@@ -89,5 +103,10 @@ public class PlayerMotor : MonoBehaviour {
 
             cam.transform.localEulerAngles = new Vector3(currentCameraRotationX, 0f, 0f);
         }
+    }
+
+    void PlayerKilled()
+    {
+
     }
 }
