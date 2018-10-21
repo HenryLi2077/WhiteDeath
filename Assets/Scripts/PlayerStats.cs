@@ -14,6 +14,7 @@ public class PlayerStats : MonoBehaviour {
     {
         return healthPercentage;
     }
+    public int score = 0;
 
     void Start()
     {

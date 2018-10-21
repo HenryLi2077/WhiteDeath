@@ -1392,6 +1392,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddda660fd5087c946ac0b5019c102466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 10
+  range: 100
+  impactForce: 30
+  currentAmmo: 6
+  slowdownChance: 0
   bulletSpread:
   - {fileID: 1833651980165206}
   - {fileID: 1233147253942290}
@@ -1402,10 +1407,6 @@ MonoBehaviour:
   - {fileID: 1632115406021134}
   - {fileID: 1905930086877570}
   - {fileID: 1500049823769244}
-  damage: 10
-  range: 100
-  impactForce: 30
-  currentAmmo: 6
   AmmoSettings:
     totalAmmo: 1
     ammo: 6

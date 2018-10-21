@@ -57,13 +57,7 @@ public class PlayerMotor : MonoBehaviour {
         // Kill test
         if(Input.GetKeyDown(KeyCode.K))
         {
-            TimeManager.instance.DoSlowmotion();
-            deathCam.transform.position = cam.transform.position;
-            deathCam.transform.rotation = cam.transform.rotation;
-            cam.gameObject.SetActive(false);
-            deathCam.gameObject.SetActive(true);
-
-            Destroy(this.gameObject);
+            PlayerKilled();
         }
     }
 
@@ -107,6 +101,13 @@ public class PlayerMotor : MonoBehaviour {
 
     void PlayerKilled()
     {
+        TimeManager.instance.DoSlowmotion();
+        deathCam.transform.position = cam.transform.position;
+        deathCam.transform.rotation = cam.transform.rotation;
+        cam.gameObject.SetActive(false);
+        deathCam.gameObject.SetActive(true);
+        PlayerUI.instance.gameOverScreen.SetActive(true);
 
+        Destroy(this.gameObject);
     }
 }

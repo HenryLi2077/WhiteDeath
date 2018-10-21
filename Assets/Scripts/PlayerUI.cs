@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerUI : MonoBehaviour {
 
+    public static PlayerUI instance;
+
     [SerializeField]
     RectTransform healthBarFill;
     [SerializeField]
@@ -18,16 +20,26 @@ public class PlayerUI : MonoBehaviour {
 
     [SerializeField]
     GameObject pauseScreen;
+
+    public GameObject gameOverScreen;
+
     [SerializeField]
-    GameObject player;
+    Text score_L;
+
     [SerializeField]
-    GameObject shotgun;
+    Text score_W;
+
+    void Start()
+    {
+        instance = GetComponent<PlayerUI>();
+    }
 
     void Update()
     {
         SetHealthAmount(PlayerStats.instance.HealthPercentage());
         SetStaminaAmount(PlayerController.instance.stamina);
         SetAmmoAmount(WeaponController.instance.currentAmmo, WeaponController.instance.AmmoSettings.totalAmmo);
+        score_L.text = "Score: " + PlayerStats.instance.score;
 
         if(Input.GetKeyDown(KeyCode.P))
         {
@@ -58,14 +70,16 @@ public class PlayerUI : MonoBehaviour {
         if (pauseScreen.activeSelf)
         {
             Time.timeScale = 0;
-            player.GetComponent<PlayerController>().enabled = false;
-            shotgun.GetComponent<WeaponController>().enabled = false;
+            TimeManager.instance.enabled = false;
+            PlayerController.instance.enabled = false;
+            WeaponController.instance.enabled = false;
         }
         else
         {
             Time.timeScale = 1;
-            player.GetComponent<PlayerController>().enabled = true;
-            shotgun.GetComponent<WeaponController>().enabled = true;
+            TimeManager.instance.enabled = true;
+            PlayerController.instance.enabled = true;
+            WeaponController.instance.enabled = true;
         }
     }
 }

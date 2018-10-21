@@ -15,14 +15,6 @@ public class WeaponController : MonoBehaviour
     bool isRunning;
     bool isJumping;
 
-    //private float reloadDelay = 0.23f;
-
-    // Camera
-    //public Camera spread;
-
-    // Bullet Spread
-    public GameObject[] bulletSpread;
-
     // Damage
     public float damage = 10f;
 
@@ -34,6 +26,14 @@ public class WeaponController : MonoBehaviour
 
     //Ammo left
     public int currentAmmo;
+
+    // Slow motion chance on shooting
+    [Header("Slow Motion Chance on Shooting (%)")]
+    [Range(0f,100f)]
+    public float slowdownChance;
+
+    // Bullet Spread
+    public GameObject[] bulletSpread;
 
     [System.Serializable]
     public class ammoSettings
@@ -139,6 +139,14 @@ public class WeaponController : MonoBehaviour
         {
             //Shoot
             Shoot();
+
+            //Do slow motion
+            float chance = 0f;
+            chance = Random.Range(0.01f, 100f);
+            if(chance <= slowdownChance)
+            {
+                TimeManager.instance.DoSlowmotion();
+            }
         }
         else if (Input.GetMouseButtonDown(0) && isReloading)
         {

@@ -72,17 +72,20 @@ public class ZombieController : MonoBehaviour {
         }
 
         // Check if player is in attack range
-        float distance = Vector3.Distance(PlayerController.instance.transform.position, transform.position);
-        //Debug.Log(distance);
-        if(distance <= attackDistance)
+        if(PlayerController.instance != null)
         {
-            _inAtkRange = true;
-            anim.SetBool("Attack", true);
-        }
-        else
-        {
-            _inAtkRange = false;
-            anim.SetBool("Attack", false);
+            float distance = Vector3.Distance(PlayerController.instance.transform.position, transform.position);
+            //Debug.Log(distance);
+            if (distance <= attackDistance)
+            {
+                _inAtkRange = true;
+                anim.SetBool("Attack", true);
+            }
+            else
+            {
+                _inAtkRange = false;
+                anim.SetBool("Attack", false);
+            }
         }
     }
 
