@@ -2403,7 +2403,7 @@ MonoBehaviour:
     Prediction: 0
     PredictionMagnitude: 0
     InnerRadius: 0
-    OuterRadius: 15
+    OuterRadius: 40
     RadiusMapping: 2
     ForEachReceptor: 0
 --- !u!114 &114400328999010798
@@ -2493,7 +2493,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 814ee1e74064db54ab986f5e210be27d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
+  ai: {fileID: 1202912099214742}
   health: 100
+  called: 0
 --- !u!114 &114963657965401984
 MonoBehaviour:
   m_ObjectHideFlags: 1

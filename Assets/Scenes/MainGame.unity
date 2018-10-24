@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.22701436, g: 0.25334042, b: 0.32430565, a: 1}
+  m_IndirectSpecularColor: {r: 0.22833481, g: 0.2545585, b: 0.3251467, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3064,7 +3064,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 1
-  m_Color: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 1}
+  m_Color: {r: 0.0754717, g: 0.0754717, b: 0.0754717, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -3098,13 +3098,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 170076733}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 114, y: 46.9, z: 25.4}
+  m_LocalRotation: {x: 0.506984, y: -0, z: -0, w: 0.86195546}
+  m_LocalPosition: {x: 95.7, y: 130.2, z: -72.72}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 60.926003, y: 0, z: 0}
 --- !u!1001 &174158306
 Prefab:
   m_ObjectHideFlags: 0
@@ -12593,7 +12593,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &700459859
 MonoBehaviour:
@@ -12843,7 +12843,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayTime: 1
-  spawnRate: 0.5
+  spawnRate: 1.5
   zombies:
   - {fileID: 1278428763399738, guid: e5e5bd0b5fc683d4a9042d8b6110ffaa, type: 2}
   - {fileID: 1388443714280806, guid: b50640b03b166044da89c15350427bed, type: 2}
@@ -14374,7 +14374,7 @@ Prefab:
     - target: {fileID: 224536956112908954, guid: c6075d04c1b31ca4fbb9abd8f6071bd0,
         type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 224536956112908954, guid: c6075d04c1b31ca4fbb9abd8f6071bd0,
         type: 2}
@@ -14425,6 +14425,10 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1731805592610050, guid: c6075d04c1b31ca4fbb9abd8f6071bd0, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6075d04c1b31ca4fbb9abd8f6071bd0, type: 2}

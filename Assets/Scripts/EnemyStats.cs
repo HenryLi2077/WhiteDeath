@@ -1,16 +1,24 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EnemyStats : MonoBehaviour {
 
+    public Animator anim;
+    public GameObject ai;
+
     public float health = 100f;
+    public bool called = false;
+
+    void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
 
     void Update()
     {
-        if(health <= 0f)
+        if(health <= 0f && called == false)
         {
             EnemyKilled();
+            called = true;
         }
     }
 
@@ -25,13 +33,24 @@ public class EnemyStats : MonoBehaviour {
 
     void EnemyKilled()
     {
-        PlayerStats.instance.score += 10;
-        gameObject.SetActive(false);
-        //Destroy(gameObject);
+        GetComponent<ZombieController>().enabled = false;
+        ai.SetActive(false);
+        anim.SetBool("killed", true);
+        Invoke("EnemyDisabled", 2f);
     }
 
     private void OnEnable()
     {
         health = 100f;
+        called = false;
+        GetComponent<ZombieController>().enabled = true;
+        ai.SetActive(true);
+    }
+
+    void EnemyDisabled()
+    {
+        PlayerStats.instance.score += 10;
+        anim.SetBool("killed", false);
+        gameObject.SetActive(false);
     }
 }
