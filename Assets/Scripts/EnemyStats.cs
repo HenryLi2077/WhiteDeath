@@ -26,6 +26,12 @@ public class EnemyStats : MonoBehaviour {
     void EnemyKilled()
     {
         PlayerStats.instance.score += 10;
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+        //Destroy(gameObject);
+    }
+
+    private void OnEnable()
+    {
+        health = 100f;
     }
 }

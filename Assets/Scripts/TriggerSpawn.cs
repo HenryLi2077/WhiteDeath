@@ -12,8 +12,6 @@ public class TriggerSpawn : MonoBehaviour {
         {
             foreach (GameObject spawnPoint in spawnPoints)
             {
-                Debug.Log("123");
-
                 spawnPoint.SetActive(true);
             }
         }
@@ -26,6 +24,17 @@ public class TriggerSpawn : MonoBehaviour {
             foreach (GameObject spawnPoint in spawnPoints)
             {
                 spawnPoint.SetActive(false);
+            }
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            foreach (GameObject spawnPoint in spawnPoints)
+            {
+                spawnPoint.SetActive(true);
             }
         }
     }
