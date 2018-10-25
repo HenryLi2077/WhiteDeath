@@ -536,6 +536,7 @@ GameObject:
   - component: {fileID: 54802504888704424}
   - component: {fileID: 114704146598533494}
   - component: {fileID: 114929355849754418}
+  - component: {fileID: 114341528937279750}
   m_Layer: 14
   m_Name: Zombie_v2
   m_TagString: Untagged
@@ -2333,6 +2334,62 @@ MonoBehaviour:
     OuterRadius: 4
     RadiusMapping: 2
     ForEachReceptor: 0
+--- !u!114 &114341528937279750
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1388443714280806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8396c33c729b9b4a951faebd1e43292, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: moan1
+    clip: {fileID: 8300000, guid: b9eb23d2417306e419846d56d1a11b1b, type: 3}
+    volume: 0.2
+    pitch: 1
+    randomVolume: 0.2
+    randomPitch: 0
+    spatialBlend: 1
+    rolloffMode: 1
+    minDistance: 0
+    maxDistance: 40
+    loop: 0
+  - name: moan2
+    clip: {fileID: 8300000, guid: 863dcca550d8bb64f8f51682f22f9908, type: 3}
+    volume: 0.2
+    pitch: 1
+    randomVolume: 0.2
+    randomPitch: 0
+    spatialBlend: 1
+    rolloffMode: 1
+    minDistance: 0
+    maxDistance: 40
+    loop: 0
+  - name: moan3
+    clip: {fileID: 8300000, guid: a61343305d535ed4e840b0f8789ccf99, type: 3}
+    volume: 0.2
+    pitch: 1
+    randomVolume: 0.2
+    randomPitch: 0
+    spatialBlend: 1
+    rolloffMode: 1
+    minDistance: 0
+    maxDistance: 40
+    loop: 0
+  - name: death
+    clip: {fileID: 8300000, guid: d1a09921f932e2c4c83bfe64f9cf1668, type: 3}
+    volume: 0.5
+    pitch: 1
+    randomVolume: 0
+    randomPitch: 0
+    spatialBlend: 1
+    rolloffMode: 1
+    minDistance: 0
+    maxDistance: 40
+    loop: 0
 --- !u!114 &114486757108884278
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2370,8 +2427,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
   ai: {fileID: 1360025450658720}
+  audioManager: {fileID: 114341528937279750}
   health: 100
-  called: 0
 --- !u!114 &114778354146444234
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2611,6 +2668,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
   context: {fileID: 114899344721241226}
+  audioManager: {fileID: 114341528937279750}
   movementSpeed: 1
   rotationSpeed: 2
   attackDistance: 2

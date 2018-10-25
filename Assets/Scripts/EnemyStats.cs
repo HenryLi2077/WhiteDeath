@@ -4,9 +4,11 @@ public class EnemyStats : MonoBehaviour {
 
     public Animator anim;
     public GameObject ai;
+    public AudioManager audioManager;
 
     public float health = 100f;
-    public bool called = false;
+
+    private bool called = false;
 
     void Start()
     {
@@ -50,6 +52,7 @@ public class EnemyStats : MonoBehaviour {
     void EnemyDisabled()
     {
         PlayerStats.instance.score += 10;
+        audioManager.PlaySound("death");
         anim.SetBool("killed", false);
         gameObject.SetActive(false);
     }

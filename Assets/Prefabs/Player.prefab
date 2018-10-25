@@ -163,6 +163,7 @@ GameObject:
   - component: {fileID: 114559424976352440}
   - component: {fileID: 114584054662107180}
   - component: {fileID: 114738121721288444}
+  - component: {fileID: 114659176942162064}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -317,6 +318,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4713877506352386}
   - component: {fileID: 20819566427598750}
+  - component: {fileID: 81949432706509988}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -847,7 +849,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1410990970776986}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 74.026, y: 8.713, z: 47.954}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4713877506352386}
@@ -1143,6 +1145,13 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.75, y: 1, z: 0.75}
   m_Center: {x: 0, y: -0.39, z: 0}
+--- !u!81 &81949432706509988
+AudioListener:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1649101492559144}
+  m_Enabled: 1
 --- !u!82 &82399623862788340
 AudioSource:
   m_ObjectHideFlags: 1
@@ -1369,6 +1378,29 @@ MonoBehaviour:
   groundCheck: {fileID: 4452772816872134}
   boxHalfExtents: 0.5
   cameraRotationLimit: 85
+--- !u!114 &114659176942162064
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1410990970776986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8396c33c729b9b4a951faebd1e43292, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: hit
+    clip: {fileID: 8300000, guid: 0be1c9e4c3cfd7849bb553db600cffc2, type: 3}
+    volume: 0.5
+    pitch: 1
+    randomVolume: 0.25
+    randomPitch: 0.1
+    spatialBlend: 1
+    rolloffMode: 1
+    minDistance: 0
+    maxDistance: 10
+    loop: 0
 --- !u!114 &114738121721288444
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1380,7 +1412,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f2a1741f3ec994459f163422b44698e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioManager: {fileID: 114659176942162064}
   maxHealth: 100
+  score: 0
 --- !u!114 &114777037438240482
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1392,6 +1426,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddda660fd5087c946ac0b5019c102466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  whatToHit:
+    serializedVersion: 2
+    m_Bits: 16384
   damage: 10
   range: 100
   impactForce: 30

@@ -7,6 +7,7 @@ public class ZombieController : MonoBehaviour {
 
     public Animator anim;
     public AIMContext context;
+    public AudioManager audioManager;
 
     public float movementSpeed = 0.5f;
     public float rotationSpeed = 1f;
@@ -31,6 +32,11 @@ public class ZombieController : MonoBehaviour {
         }
 
         anim.applyRootMotion = false;
+    }
+
+    private void Start()
+    {
+        InvokeRepeating("Moan", 1f, 3f);
     }
 
     private void Update()
@@ -72,7 +78,7 @@ public class ZombieController : MonoBehaviour {
         }
 
         // Check if player is in attack range
-        if(PlayerController.instance != null)
+        if (PlayerController.instance != null)
         {
             float distance = Vector3.Distance(PlayerController.instance.transform.position, transform.position);
             //Debug.Log(distance);
@@ -95,6 +101,26 @@ public class ZombieController : MonoBehaviour {
         {
             //Debug.Log("BITE!");
             PlayerStats.instance.PlayerTakeDamage(attackDamage);
+        }
+    }
+
+    void Moan()
+    {
+        // Make sounds
+        int random_num;
+        random_num = (int)Random.Range(0, 3);
+
+        switch(random_num)
+        {
+            case 0:
+                audioManager.PlaySound("moan1");
+                break;
+            case 1:
+                audioManager.PlaySound("moan2");
+                break;
+            case 2:
+                audioManager.PlaySound("moan3");
+                break;
         }
     }
 }

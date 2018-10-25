@@ -6,6 +6,8 @@ public class WeaponController : MonoBehaviour
     public static WeaponController instance;
     Animator anim;
 
+    public LayerMask whatToHit;
+
     bool isReloading;
     bool outOfAmmo;
 
@@ -251,7 +253,7 @@ public class WeaponController : MonoBehaviour
 
         foreach (GameObject spread in bulletSpread)
         {
-            if (Physics.Raycast(spread.transform.position, spread.transform.forward, out hit, range))
+            if (Physics.Raycast(spread.transform.position, spread.transform.forward, out hit, range, whatToHit))
             {
                 Debug.Log(hit.transform.name);
                 Debug.DrawRay(spread.transform.position, spread.transform.forward, Color.green, 5f);

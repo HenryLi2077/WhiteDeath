@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour {
 
     public static PlayerStats instance;
+    public AudioManager audioManager;
 
     [SerializeField]
     private float maxHealth = 100f;
@@ -31,6 +32,7 @@ public class PlayerStats : MonoBehaviour {
     public void PlayerTakeDamage(float _amount)
     {
         currentHealth -= _amount;
+        audioManager.PlaySound("hit");
         Debug.Log("Player took " + _amount + " damage.");
 
         if (currentHealth <= 0f)
