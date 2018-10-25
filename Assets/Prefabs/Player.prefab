@@ -1350,6 +1350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 507f4543aa9fee146abc72b5f73991e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioManager: {fileID: 114659176942162064}
   flashlight: {fileID: 1580937082843170}
   speed: 5
   stamina: 1
@@ -1392,6 +1393,28 @@ MonoBehaviour:
   sounds:
   - name: hit
     clip: {fileID: 8300000, guid: 0be1c9e4c3cfd7849bb553db600cffc2, type: 3}
+    volume: 0.5
+    pitch: 1
+    randomVolume: 0.25
+    randomPitch: 0.1
+    spatialBlend: 1
+    rolloffMode: 1
+    minDistance: 0
+    maxDistance: 10
+    loop: 0
+  - name: health
+    clip: {fileID: 8300000, guid: d35bc9fc7467ca84a96306f0bb1e1645, type: 3}
+    volume: 0.5
+    pitch: 1
+    randomVolume: 0.25
+    randomPitch: 0.1
+    spatialBlend: 1
+    rolloffMode: 1
+    minDistance: 0
+    maxDistance: 10
+    loop: 0
+  - name: ammo
+    clip: {fileID: 8300000, guid: 1e522817610b1754e9949fa0c2534e5a, type: 3}
     volume: 0.5
     pitch: 1
     randomVolume: 0.25

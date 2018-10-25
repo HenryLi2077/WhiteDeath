@@ -3,6 +3,8 @@
 [RequireComponent(typeof(PlayerMotor))]
 public class PlayerController : MonoBehaviour {
 
+    public AudioManager audioManager;
+
     [SerializeField]
     private GameObject flashlight;
 
@@ -91,6 +93,7 @@ public class PlayerController : MonoBehaviour {
         {
             PickUpEnable.instance.SpawnHealth(other.gameObject.transform.position);
             Destroy(other.gameObject);
+            audioManager.PlaySound("health");
             PlayerStats.instance.PlayerHealed();
         }
 
@@ -98,6 +101,7 @@ public class PlayerController : MonoBehaviour {
         {
             PickUpEnable.instance.SpawnAmmo(other.gameObject.transform.position);
             Destroy(other.gameObject);
+            audioManager.PlaySound("ammo");
             WeaponController.instance.PickUpAmmo();
         }
     }

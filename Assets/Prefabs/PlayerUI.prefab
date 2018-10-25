@@ -529,7 +529,7 @@ MonoBehaviour:
   pauseScreen: {fileID: 1974705604590352}
   gameOverScreen: {fileID: 1448738070777902}
   score_L: {fileID: 114969457009463470}
-  score_W: {fileID: 0}
+  score_W: {fileID: 114940678424476884}
 --- !u!114 &114153493614448578
 MonoBehaviour:
   m_ObjectHideFlags: 1

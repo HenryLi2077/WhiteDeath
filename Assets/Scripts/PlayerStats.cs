@@ -6,6 +6,7 @@ public class PlayerStats : MonoBehaviour {
 
     public static PlayerStats instance;
     public AudioManager audioManager;
+    public GameObject hud;
 
     [SerializeField]
     private float maxHealth = 100f;
@@ -37,6 +38,8 @@ public class PlayerStats : MonoBehaviour {
 
         if (currentHealth <= 0f)
         {
+            hud.SetActive(false);
+            PlayerMotor.instance.PlayerKilled();
             Debug.Log("Player Destroyed!");
         }
     }

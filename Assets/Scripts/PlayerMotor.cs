@@ -4,6 +4,8 @@ using Unity.Collections;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerMotor : MonoBehaviour {
 
+    public static PlayerMotor instance;
+
     [SerializeField]
     private Camera cam;
     [SerializeField]
@@ -31,6 +33,7 @@ public class PlayerMotor : MonoBehaviour {
 
     void Start()
     {
+        instance = GetComponent<PlayerMotor>();
         rb = GetComponent<Rigidbody>();
     }
 
@@ -99,7 +102,7 @@ public class PlayerMotor : MonoBehaviour {
         }
     }
 
-    void PlayerKilled()
+    public void PlayerKilled()
     {
         TimeManager.instance.DoSlowmotion();
         deathCam.transform.position = cam.transform.position;
