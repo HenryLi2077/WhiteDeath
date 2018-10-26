@@ -21,12 +21,16 @@ public class PlayerUI : MonoBehaviour {
     GameObject pauseScreen;
 
     public GameObject gameOverScreen;
+    public GameObject victoryScreen;
 
     [SerializeField]
     Text score_L;
 
     [SerializeField]
     Text score_W;
+
+    [SerializeField]
+    Text timer;
 
     void Start()
     {
@@ -39,8 +43,13 @@ public class PlayerUI : MonoBehaviour {
         SetStaminaAmount(PlayerController.instance.stamina);
         SetAmmoAmount(WeaponController.instance.currentAmmo, WeaponController.instance.AmmoSettings.totalAmmo);
         score_L.text = "Score: " + PlayerStats.instance.score;
+        score_W.text = "Score: " + PlayerStats.instance.score;
+        if(Timer.instance.time_s < 10)
+            timer.text = Timer.instance.time_m + ":0" + Timer.instance.time_s;
+        else
+            timer.text = Timer.instance.time_m + ":" + Timer.instance.time_s;
 
-        if(Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P))
         {
             PauseGame();
         }
