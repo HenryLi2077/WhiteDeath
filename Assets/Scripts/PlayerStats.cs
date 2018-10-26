@@ -47,7 +47,7 @@ public class PlayerStats : MonoBehaviour {
     public void PlayerHealed()
     {
         currentHealth += GameSetting.instance.pickUpSetting.healAmount;
-        Mathf.Clamp(currentHealth, 0f, 100f);
+        currentHealth = Mathf.Clamp(currentHealth, 0f, 100f);
         Debug.Log(currentHealth);
     }
 }

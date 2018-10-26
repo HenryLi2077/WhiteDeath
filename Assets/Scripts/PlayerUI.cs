@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerUI : MonoBehaviour {
 
@@ -81,5 +80,15 @@ public class PlayerUI : MonoBehaviour {
             PlayerController.instance.enabled = true;
             WeaponController.instance.enabled = true;
         }
+    }
+
+    public void ReturnMenu()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    }
+
+    public void Replay()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
