@@ -7,6 +7,7 @@ public class EnemyStats : MonoBehaviour {
     public AudioManager audioManager;
 
     public float health = 100f;
+    private float distance;
 
     private bool called = false;
 
@@ -21,6 +22,16 @@ public class EnemyStats : MonoBehaviour {
         {
             EnemyKilled();
             called = true;
+        }
+
+        // Detect distance
+        if(PlayerMotor.instance != null)
+        {
+            distance = Vector3.Distance(this.transform.position, PlayerMotor.instance.gameObject.transform.position);
+            if (distance >= 50f)
+            {
+                this.gameObject.SetActive(false);
+            }
         }
     }
 
@@ -51,8 +62,7 @@ public class EnemyStats : MonoBehaviour {
 
     void EnemyDisabled()
     {
-        PlayerStats.instance.score += 10;
-        audioManager.PlaySound("death");
+        PlayerStats.instance.score += 100;
         anim.SetBool("killed", false);
         gameObject.SetActive(false);
     }

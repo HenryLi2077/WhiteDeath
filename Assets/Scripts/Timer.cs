@@ -44,6 +44,7 @@ public class Timer : MonoBehaviour {
             TimeManager.instance.enabled = false;
             PlayerController.instance.enabled = false;
             WeaponController.instance.enabled = false;
+            Cursor.visible = true;
         }
     }
 }

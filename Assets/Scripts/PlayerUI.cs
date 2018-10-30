@@ -35,6 +35,7 @@ public class PlayerUI : MonoBehaviour {
     void Start()
     {
         instance = GetComponent<PlayerUI>();
+        Cursor.visible = false;
     }
 
     void Update()

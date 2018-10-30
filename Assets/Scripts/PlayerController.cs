@@ -86,6 +86,7 @@ public class PlayerController : MonoBehaviour {
         if(Input.GetKeyDown(KeyCode.F))
         {
             flashlight.SetActive(!flashlight.activeSelf);
+            audioManager.PlaySound("Flashlight");
         }
     }
 

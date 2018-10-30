@@ -61,10 +61,10 @@ public class PlayerMotor : MonoBehaviour {
         PerformJump();
 
         // Kill test
-        if(Input.GetKeyDown(KeyCode.K))
-        {
-            PlayerKilled();
-        }
+        //if(Input.GetKeyDown(KeyCode.K))
+        //{
+        //    PlayerKilled();
+        //}
     }
 
     void FixedUpdate()
@@ -120,6 +120,7 @@ public class PlayerMotor : MonoBehaviour {
         PlayerController.instance.enabled = false;
         WeaponController.instance.enabled = false;
         Timer.instance.death = true;
+        Cursor.visible = true;
 
         Destroy(this.gameObject);
     }

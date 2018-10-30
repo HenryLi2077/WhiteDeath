@@ -1437,6 +1437,17 @@ MonoBehaviour:
     minDistance: 0
     maxDistance: 10
     loop: 0
+  - name: Flashlight
+    clip: {fileID: 8300000, guid: fa860581fa9cdc64c9fcede30d0a4b41, type: 3}
+    volume: 0.5
+    pitch: 1
+    randomVolume: 0
+    randomPitch: 0
+    spatialBlend: 1
+    rolloffMode: 1
+    minDistance: 0
+    maxDistance: 10
+    loop: 0
 --- !u!114 &114738121721288444
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1470,7 +1481,7 @@ MonoBehaviour:
   range: 100
   impactForce: 30
   currentAmmo: 6
-  slowdownChance: 50
+  slowdownChance: 20
   bulletSpread:
   - {fileID: 1833651980165206}
   - {fileID: 1233147253942290}

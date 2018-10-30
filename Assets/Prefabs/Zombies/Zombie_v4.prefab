@@ -2478,17 +2478,6 @@ MonoBehaviour:
     minDistance: 0
     maxDistance: 40
     loop: 0
-  - name: death
-    clip: {fileID: 8300000, guid: d1a09921f932e2c4c83bfe64f9cf1668, type: 3}
-    volume: 0.5
-    pitch: 1
-    randomVolume: 0
-    randomPitch: 0
-    spatialBlend: 1
-    rolloffMode: 1
-    minDistance: 0
-    maxDistance: 40
-    loop: 0
 --- !u!114 &114452806521596706
 MonoBehaviour:
   m_ObjectHideFlags: 1

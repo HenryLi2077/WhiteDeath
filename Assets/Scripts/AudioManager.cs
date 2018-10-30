@@ -85,7 +85,6 @@ public class AudioManager : MonoBehaviour
             if (sounds[i].name == _name)
             {
                 sounds[i].Play();
-                Debug.Log(sounds[i].name);
                 return;
             }
         }
