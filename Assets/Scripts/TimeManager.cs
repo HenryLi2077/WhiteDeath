@@ -3,6 +3,7 @@
 public class TimeManager : MonoBehaviour {
 
     public static TimeManager instance;
+    public AudioManager audioManager;
 
     public float slowdownFactor = 0.05f;
     public float slowdownLength = 2f;
@@ -22,5 +23,6 @@ public class TimeManager : MonoBehaviour {
     public void DoSlowmotion()
     {
         Time.timeScale = slowdownFactor;
+        audioManager.PlaySound("SlowMotion");
     }
 }

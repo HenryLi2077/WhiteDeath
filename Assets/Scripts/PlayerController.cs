@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour {
     private float staminaRegen = 0.3f;
     [SerializeField]
     private float sprintFactor = 1.5f;
+    [SerializeField]
+    private float durability = 1;
 
     [SerializeField]
     private float jumpForce = 500f;
@@ -49,7 +51,7 @@ public class PlayerController : MonoBehaviour {
 
         if(Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.W))
         {
-            stamina -= staminaReduce * Time.deltaTime;
+            stamina -= staminaReduce* (1/ durability) * Time.deltaTime;
             if(stamina >= 0.01f)
             {
                 motor.Move(_velocity * sprintFactor, _jump);

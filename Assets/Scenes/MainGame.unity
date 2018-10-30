@@ -14024,8 +14024,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecb25135b65b65f4882c27159393be07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slowdownFactor: 0.05
-  slowdownLength: 3
+  audioManager: {fileID: 2006592510}
+  slowdownFactor: 0.005
+  slowdownLength: 3.5
 --- !u!1 &701174665
 GameObject:
   m_ObjectHideFlags: 0
@@ -33779,12 +33780,17 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114738121721288444, guid: 939ef568cd03944458c7f08fe29f537d,
+        type: 2}
+      propertyPath: hud
+      value: 
+      objectReference: {fileID: 1240885867}
     - target: {fileID: 114584054662107180, guid: 939ef568cd03944458c7f08fe29f537d,
         type: 2}
       propertyPath: deathCam
       value: 
       objectReference: {fileID: 521118016}
-    - target: {fileID: 114738121721288444, guid: 939ef568cd03944458c7f08fe29f537d,
+    - target: {fileID: 114584054662107180, guid: 939ef568cd03944458c7f08fe29f537d,
         type: 2}
       propertyPath: hud
       value: 
@@ -41864,6 +41870,12 @@ Transform:
   m_Father: {fileID: 591237340}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0.65800005, z: 0}
+--- !u!114 &2006592510 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114659176942162064, guid: 939ef568cd03944458c7f08fe29f537d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1628475960}
+  m_Script: {fileID: 11500000, guid: a8396c33c729b9b4a951faebd1e43292, type: 3}
 --- !u!1001 &2011730996
 Prefab:
   m_ObjectHideFlags: 0

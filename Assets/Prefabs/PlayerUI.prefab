@@ -577,8 +577,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hud: {fileID: 1416799641417842}
-  time_m: 0
-  time_s: 10
+  time_m: 2
+  time_s: 0
+  death: 0
 --- !u!114 &114153493614448578
 MonoBehaviour:
   m_ObjectHideFlags: 1

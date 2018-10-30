@@ -11,6 +11,8 @@ public class Timer : MonoBehaviour {
     public int time_m = 3;
     public int time_s = 0;
 
+    public bool death = false;
+
     void Start ()
     {
         instance = GetComponent<Timer>();
@@ -19,6 +21,9 @@ public class Timer : MonoBehaviour {
 	
 	void CountDown()
     {
+        if (death)
+            return;
+
         if(!(time_m == 0 && time_s == 0))
         {
             if (time_s > 0)

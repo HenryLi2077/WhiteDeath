@@ -17,6 +17,7 @@ public class PlayerMotor : MonoBehaviour {
     private Vector3 rotation = Vector3.zero;
     private float cameraRotationX = 0f;
     private float currentCameraRotationX = 0f;
+    private bool jumpCheck = true;
     [SerializeField]
     private bool grounded = false;
 
@@ -28,6 +29,8 @@ public class PlayerMotor : MonoBehaviour {
 
     [SerializeField]
     private float cameraRotationLimit = 85f;
+
+    public GameObject hud;
 
     private Rigidbody rb;
 
@@ -83,10 +86,13 @@ public class PlayerMotor : MonoBehaviour {
 
     void PerformJump()
     {
-        if (grounded && Input.GetKeyDown(KeyCode.Space))
+        if (grounded && jumpCheck && Input.GetKeyDown(KeyCode.Space))
         {
             rb.AddForce(jump);
+            jumpCheck = false;
             grounded = false;
+
+            Invoke("LeaveGround", 1f);
         }
     }
 
@@ -110,7 +116,16 @@ public class PlayerMotor : MonoBehaviour {
         cam.gameObject.SetActive(false);
         deathCam.gameObject.SetActive(true);
         PlayerUI.instance.gameOverScreen.SetActive(true);
+        hud.SetActive(false);
+        PlayerController.instance.enabled = false;
+        WeaponController.instance.enabled = false;
+        Timer.instance.death = true;
 
         Destroy(this.gameObject);
+    }
+
+    void LeaveGround()
+    {
+        jumpCheck = true;
     }
 }

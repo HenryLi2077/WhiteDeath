@@ -849,7 +849,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1410990970776986}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 93.712, y: 4.937, z: -108.39}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4713877506352386}
@@ -1163,7 +1163,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c8862557ba4c0b64ba678de7ff1538ed, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1357,6 +1357,7 @@ MonoBehaviour:
   staminaReduce: 1
   staminaRegen: 0.3
   sprintFactor: 3
+  durability: 5
   jumpForce: 500
   lookSensitivity: 3
 --- !u!114 &114584054662107180
@@ -1379,6 +1380,7 @@ MonoBehaviour:
   groundCheck: {fileID: 4452772816872134}
   boxHalfExtents: 0.5
   cameraRotationLimit: 85
+  hud: {fileID: 0}
 --- !u!114 &114659176942162064
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1406,8 +1408,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: d35bc9fc7467ca84a96306f0bb1e1645, type: 3}
     volume: 0.5
     pitch: 1
-    randomVolume: 0.25
-    randomPitch: 0.1
+    randomVolume: 0
+    randomPitch: 0
     spatialBlend: 1
     rolloffMode: 1
     minDistance: 0
@@ -1417,8 +1419,19 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 1e522817610b1754e9949fa0c2534e5a, type: 3}
     volume: 0.5
     pitch: 1
-    randomVolume: 0.25
-    randomPitch: 0.1
+    randomVolume: 0
+    randomPitch: 0
+    spatialBlend: 1
+    rolloffMode: 1
+    minDistance: 0
+    maxDistance: 10
+    loop: 0
+  - name: SlowMotion
+    clip: {fileID: 8300000, guid: 15e6014f6de712f4693da45885c54215, type: 3}
+    volume: 0.7
+    pitch: 1
+    randomVolume: 0
+    randomPitch: 0
     spatialBlend: 1
     rolloffMode: 1
     minDistance: 0
@@ -1436,6 +1449,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioManager: {fileID: 114659176942162064}
+  hud: {fileID: 0}
   maxHealth: 100
   score: 0
 --- !u!114 &114777037438240482
@@ -1456,7 +1470,7 @@ MonoBehaviour:
   range: 100
   impactForce: 30
   currentAmmo: 6
-  slowdownChance: 0
+  slowdownChance: 50
   bulletSpread:
   - {fileID: 1833651980165206}
   - {fileID: 1233147253942290}
@@ -1468,7 +1482,7 @@ MonoBehaviour:
   - {fileID: 1905930086877570}
   - {fileID: 1500049823769244}
   AmmoSettings:
-    totalAmmo: 1
+    totalAmmo: 10
     ammo: 6
   Components:
     sideMuzzle: {fileID: 1523257450718216}
